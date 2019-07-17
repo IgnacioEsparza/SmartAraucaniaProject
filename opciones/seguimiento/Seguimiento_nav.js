@@ -1,13 +1,18 @@
-//This is an example code for NavigationDrawer//
+
 import React, { Component } from 'react';
-//import react in our code.
-import { StyleSheet, View, Text, Image, TouchableOpacity, Alert } from 'react-native';
-// import all basic components
+import { AppRegistry, FlatList, StyleSheet, View, Text, Image, TouchableOpacity, Alert } from 'react-native';
+
+import ListShape from '../seguimiento/Adapter_list_seguimiento'
 
 export default class Seguimiento_nav extends Component {
   //Screen3 Component
 
-  clickHandler = () => {
+  ingresarIncidenciaBtn = () => {
+    //function to handle click on floating Action Button
+    Alert.alert('Ingresar Incidencia');
+  };
+
+  transicionSeguimientoBtn = () => {
     //function to handle click on floating Action Button
     Alert.alert('Haz Pulsado el Botón');
   };
@@ -22,17 +27,24 @@ export default class Seguimiento_nav extends Component {
       <View style={styles.MainContainer}>
 
         <View style={styles.BannerStyle}>
-          <Text style={{ fontSize: 15, color: '#FFFFFF' }}> Estado de Seguimiento</Text>
+          <Text style={{ fontSize: 15, color: '#FFFFFF' }}> Estado de Incidencias</Text>
         </View>
 
         <View style={styles.FragmentStyle}>
-
+          <FlatList
+            data={[
+              { title: 'Mobiliario Urbano Mal Estado', description: 'Arturo Prat 725' },
+              { title: 'Mobiliario Urbano Mal Estado', description: 'Plaza Anibal Pinto' },
+              { title: 'Semáforo Defectuoso', description: 'Avenida Caupolicán' },
+            ]}
+            renderItem={({ item }) => <ListShape title={item.title} description={item.description}/>}
+          />
         </View>
 
         <View>
           <TouchableOpacity
             activeOpacity={0.7}
-            onPress={this.clickHandler}
+            onPress={this.ingresarIncidenciaBtn}
             style={styles.TouchableOpacityStyle}>
             <Image
               //We are making FAB using TouchableOpacity with an image
@@ -86,5 +98,11 @@ const styles = StyleSheet.create({
   FragmentStyle: {
     flex: 18,
     backgroundColor: '#FFFFFF',
-  }
+  },
+
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
+  },
 });

@@ -57,9 +57,6 @@ const FirstActivity_StackNavigator = createStackNavigator({
   },
 });
  
-//For React Navigation 2.+ need to use StackNavigator instead createStackNavigator
-//const FirstActivity_StackNavigator = StackNavigator({
-//For React Navigation 3.+
 const Seguimiento_nav_StackNavigator = createStackNavigator({
   //All the screen from the Seguimiento_nav will be indexed here
   Second: {
@@ -113,18 +110,19 @@ const Configuracion_nav_StackNavigator = createStackNavigator({
 //For React Navigation 3.+
 const DrawerNavigatorExample = createDrawerNavigator({
   //Drawer Optons and indexing
-  Ingresar_nav: {
-    //Title
-    screen: FirstActivity_StackNavigator,
-    navigationOptions: {
-      drawerLabel: 'Ingresar Incidencia',
-    },
-  },
+ 
   Seguimiento_nav: {
     //Title
     screen: Seguimiento_nav_StackNavigator,
     navigationOptions: {
       drawerLabel: 'Seguimiento',
+    },
+  },
+  Ingresar_nav: {
+    //Title
+    screen: FirstActivity_StackNavigator,
+    navigationOptions: {
+      drawerLabel: 'Ingresar Incidencia',
     },
   },
   Cuenta_nav: {
