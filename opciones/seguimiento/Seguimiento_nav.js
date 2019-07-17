@@ -76,13 +76,15 @@ const styles = StyleSheet.create({
 
   BannerStyle: {
     flex: 1,
-    backgroundColor: '#386C3A',
+    //marginStart: 10,
     justifyContent: 'center',
-    marginStart: 10,
+    backgroundColor: '#386C3A',
+    alignItems: 'stretch',
+    padding: 10,
   },
 
   FragmentStyle: {
-    flex: 15,
+    flex: 18,
     backgroundColor: '#FFFFFF',
   }
 });
