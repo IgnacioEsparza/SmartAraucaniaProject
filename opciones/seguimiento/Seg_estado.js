@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { AppRegistry, FlatList, StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
 export default class Seguimiento_nav extends Component {
 
@@ -17,13 +17,7 @@ export default class Seguimiento_nav extends Component {
   render() {
     return (
       <View style={styles.MainContainer}>
-
-        <View style={styles.BannerStyle}>
-          <Text style={{ fontSize: 15, color: '#FFFFFF' }}> Estado de Incidencias</Text>
-        </View>
-
-        <View style={styles.FragmentStyle}>
-        </View>
+        <Text style={{ fontSize: 15, color: '#FFFFFF' }}> Estado de Incidencias</Text>
       </View>
     );
   }

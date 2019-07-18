@@ -6,10 +6,10 @@ import {
   View,
   Animated,
   TouchableWithoutFeedback,
-  Alert,
+  TouchableHighlight,
   ScrollView,
+  Alert,
 } from 'react-native';
-import { List, ListItem } from "react-native-elements";
 
 import ListShape from '../seguimiento/Adapter_list_seguimiento';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -36,14 +36,8 @@ class Seguimiento_nav extends Component {
   };
 
   transicionSeguimientoBtn = () => {
-    //function to handle click on floating Action Button
-    Alert.alert('Haz Pulsado el Botón');
+    
   };
-
-  constructor() {
-    super()
-    this.state = {}
-  }
 
   render() {
     return (
@@ -58,7 +52,12 @@ class Seguimiento_nav extends Component {
                 { title: 'Mobiliario Urbano Mal Estado', description: 'Plaza Anibal Pinto' },
                 { title: 'Semáforo Defectuoso', description: 'Avenida Caupolicán' },
               ]}
-              renderItem={({ item }) => <ListShape title={item.title} description={item.description} />}
+              renderItem={({ item }) => (
+                <TouchableWithoutFeedback onPress={() => this.transicionSeguimientoBtn(item)}>
+                  <ListShape title={item.title} description={item.description} />
+                </TouchableWithoutFeedback>
+              )}
+              keyExtractor={item => item.description}
             />
           </ScrollView>
         </View>
@@ -120,10 +119,12 @@ const styles = StyleSheet.create({
 import { createStackNavigator, createAppContainer } from 'react-navigation'; // Version can be specified in package.json
 
 import Ingresar from '../Ingresar_nav';
+import EstadoSeguimiento from './Seg_estado';
 
 const AppNavigator = createStackNavigator({
   Inicio: { screen: Seguimiento_nav },
   Ing: { screen: Ingresar },
+  Seg: { screen: EstadoSeguimiento },
 });
 
 export default createAppContainer(AppNavigator);
