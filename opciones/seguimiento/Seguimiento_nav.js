@@ -1,15 +1,38 @@
 
 import React, { Component } from 'react';
-import { AppRegistry, FlatList, StyleSheet, View, Text, Image, TouchableOpacity, Alert } from 'react-native';
+import {
+  FlatList,
+  StyleSheet,
+  View,
+  Animated,
+  TouchableWithoutFeedback,
+  Alert,
+  ScrollView,
+} from 'react-native';
+import { List, ListItem } from "react-native-elements";
 
-import ListShape from '../seguimiento/Adapter_list_seguimiento'
+import ListShape from '../seguimiento/Adapter_list_seguimiento';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default class Seguimiento_nav extends Component {
-  //Screen3 Component
+
+class Seguimiento_nav extends Component {
+
+  static navigationOptions = {
+    title: 'Estado de Incidencias',
+    headerStyle: {
+      backgroundColor: '#386C3A',
+    },
+    headerTitleStyle: {
+      color: '#FFFFFF'
+    }
+  }
+
+  state = {
+    animation: new Animated.Value(0)
+  }
 
   ingresarIncidenciaBtn = () => {
-    //function to handle click on floating Action Button
-    Alert.alert('Ingresar Incidencia');
+    this.props.navigation.navigate('Ing')
   };
 
   transicionSeguimientoBtn = () => {
@@ -24,41 +47,29 @@ export default class Seguimiento_nav extends Component {
 
   render() {
     return (
+
       <View style={styles.MainContainer}>
 
-        <View style={styles.BannerStyle}>
-          <Text style={{ fontSize: 15, color: '#FFFFFF' }}> Estado de Incidencias</Text>
-        </View>
-
         <View style={styles.FragmentStyle}>
-          <FlatList
-            data={[
-              { title: 'Mobiliario Urbano Mal Estado', description: 'Arturo Prat 725' },
-              { title: 'Mobiliario Urbano Mal Estado', description: 'Plaza Anibal Pinto' },
-              { title: 'Semáforo Defectuoso', description: 'Avenida Caupolicán' },
-            ]}
-            renderItem={({ item }) => <ListShape title={item.title} description={item.description}/>}
-          />
+          <ScrollView>
+            <FlatList
+              data={[
+                { title: 'Mobiliario Urbano Mal Estado', description: 'Arturo Prat 725' },
+                { title: 'Mobiliario Urbano Mal Estado', description: 'Plaza Anibal Pinto' },
+                { title: 'Semáforo Defectuoso', description: 'Avenida Caupolicán' },
+              ]}
+              renderItem={({ item }) => <ListShape title={item.title} description={item.description} />}
+            />
+          </ScrollView>
         </View>
 
         <View>
-          <TouchableOpacity
-            activeOpacity={0.7}
-            onPress={this.ingresarIncidenciaBtn}
-            style={styles.TouchableOpacityStyle}>
-            <Image
-              //We are making FAB using TouchableOpacity with an image
-              //We are using online image here
-              source={{
-                uri: 'https://aboutreact.com/wp-content/uploads/2018/08/bc72de57b000a7037294b53d34c2cbd1.png',
-              }}
-              //You can use you project image Example below
-              //source={require('./images/float-add-icon.png')}
-              style={styles.FloatingButtonStyle}
-            />
-          </TouchableOpacity>
+          <TouchableWithoutFeedback activeOpacity={0.7} onPress={this.ingresarIncidenciaBtn}>
+            <Animated.View style={[styles.button, styles.insertar]}>
+              <Icon name='plus' size={20} color='#ffffff'></Icon>
+            </Animated.View>
+          </TouchableWithoutFeedback>
         </View>
-
       </View>
     );
   }
@@ -67,32 +78,6 @@ export default class Seguimiento_nav extends Component {
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
-  },
-
-  TouchableOpacityStyle: {
-    position: 'absolute',
-    width: 50,
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    right: 30,
-    bottom: 30,
-  },
-
-  FloatingButtonStyle: {
-    resizeMode: 'contain',
-    width: 50,
-    height: 50,
-    //backgroundColor:'black'
-  },
-
-  BannerStyle: {
-    flex: 1,
-    //marginStart: 10,
-    justifyContent: 'center',
-    backgroundColor: '#386C3A',
-    alignItems: 'stretch',
-    padding: 10,
   },
 
   FragmentStyle: {
@@ -105,4 +90,40 @@ const styles = StyleSheet.create({
     fontSize: 18,
     height: 44,
   },
+
+  button: {
+    width: 60,
+    height: 60,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#333',
+    shadowOpacity: .1,
+    shadowOffset: { x: 2, y: 0 },
+    shadowRadius: 2,
+    borderRadius: 30,
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
+  },
+
+  insertar: {
+    backgroundColor: '#484848'
+  },
+
+  textoInsertar: {
+    backgroundColor: '#ffffff',
+    fontSize: 15,
+  }
+
 });
+
+import { createStackNavigator, createAppContainer } from 'react-navigation'; // Version can be specified in package.json
+
+import Ingresar from '../Ingresar_nav';
+
+const AppNavigator = createStackNavigator({
+  Inicio: { screen: Seguimiento_nav },
+  Ing: { screen: Ingresar },
+});
+
+export default createAppContainer(AppNavigator);

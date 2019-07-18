@@ -2,19 +2,19 @@
 import React, { Component } from 'react';
 //import react in our code.
 import { StyleSheet, View, Text } from 'react-native';
-// import all basic components
- 
+
+
 export default class Configuracion_nav extends Component {
-  //Screen1 Component
+
   render() {
     return (
       <View style={styles.MainContainer}>
-        <Text style={{ fontSize: 23 }}> Configuración </Text>
+        <Text style={{ fontSize: 12 }}> Configuracion </Text>
       </View>
     );
   }
 }
- 
+
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,

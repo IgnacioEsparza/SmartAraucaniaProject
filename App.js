@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Plataform, StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import Navegador from './Navegador';
 
 export default class App extends Component {
@@ -8,7 +8,9 @@ export default class App extends Component {
     return (
       <View style={{ flex: 1 }}>
         <Navegador></Navegador>
+        {/* <Navegator></Navegator> */}
       </View>
     );
   }
+  
 }

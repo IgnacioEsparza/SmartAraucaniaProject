@@ -3,11 +3,15 @@ import React, { Component } from 'react';
 import { AppRegistry, FlatList, StyleSheet, View, Text, Image } from 'react-native';
 
 export default class Seguimiento_nav extends Component {
-  
 
-  constructor() {
-    super()
-    this.state = {}
+  static navigationOptions = {
+    title: 'Estado de Incidencias',
+    headerStyle: {
+      backgroundColor: '#386C3A',
+    },
+    headerTitleStyle: {
+      color: '#FFFFFF'
+    }
   }
 
   render() {

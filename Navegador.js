@@ -3,10 +3,7 @@
 import React, { Component } from 'react';
 //import react in our code.
 import { View, Image, TouchableOpacity } from 'react-native';
-// import all basic components
-//For React Navigation 2.+ import following
-//import {DrawerNavigator, StackNavigator} from 'react-navigation';
-//For React Navigation 3.+ import following
+
 import {
   createDrawerNavigator,
   createStackNavigator,
@@ -39,9 +36,6 @@ class NavigationDrawerStructure extends Component {
   }
 }
  
-//For React Navigation 2.+ need to use StackNavigator instead createStackNavigator
-//const FirstActivity_StackNavigator = StackNavigator({
-//For React Navigation 3.+
 const FirstActivity_StackNavigator = createStackNavigator({
   //All the screen from the Ingresar_nav will be indexed here
   First: {
@@ -139,8 +133,6 @@ const DrawerNavigatorExample = createDrawerNavigator({
     },
   },
 });
- 
-//For React Navigation 2.+ need to export App only
-//export default App;
-//For React Navigation 3.+
+
+
 export default createAppContainer(DrawerNavigatorExample);
