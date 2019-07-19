@@ -3,24 +3,40 @@ import React, { Component } from 'react';
 //import react in our code.
 import { StyleSheet, View, Text } from 'react-native';
 // import all basic components
- 
+
 export default class Cuenta_nav extends Component {
-  //Screen3 Component
+
   render() {
     return (
       <View style={styles.MainContainer}>
-        <Text style={{ fontSize: 23 }}> Mi Cuenta </Text>
+        <View style={styles.BannerStyle}>
+          <Text style={{ fontSize: 22, color: '#FFFFFF' }}>Mi Cuenta</Text>
+        </View>
+
+        <View style={styles.FragmentStyle}>
+
+        </View>
       </View>
     );
   }
 }
- 
+
 const styles = StyleSheet.create({
   MainContainer: {
+    flex: 1
+  },
+
+  BannerStyle: {
     flex: 1,
-    paddingTop: 20,
-    alignItems: 'center',
-    marginTop: 50,
+    //marginStart: 10,
     justifyContent: 'center',
+    backgroundColor: '#386C3A',
+    alignItems: 'stretch',
+    padding: 10,
+  },
+
+  FragmentStyle: {
+    flex: 13,
+    backgroundColor: '#FFFFFF',
   },
 });

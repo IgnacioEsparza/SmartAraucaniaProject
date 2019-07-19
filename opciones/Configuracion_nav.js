@@ -9,7 +9,13 @@ export default class Configuracion_nav extends Component {
   render() {
     return (
       <View style={styles.MainContainer}>
-        <Text style={{ fontSize: 12 }}> Configuracion </Text>
+        <View style={styles.BannerStyle}>
+          <Text style={{ fontSize: 22, color: '#FFFFFF' }}> Configuración</Text>
+        </View>
+
+        <View style={styles.FragmentStyle}>
+
+        </View>
       </View>
     );
   }
@@ -17,10 +23,20 @@ export default class Configuracion_nav extends Component {
 
 const styles = StyleSheet.create({
   MainContainer: {
-    flex: 1,
-    paddingTop: 20,
-    alignItems: 'center',
-    marginTop: 50,
-    justifyContent: 'center',
+    flex: 1
   },
+
+  BannerStyle: {
+    flex: 1,
+    //marginStart: 10,
+    justifyContent: 'center',
+    backgroundColor: '#386C3A',
+    alignItems: 'stretch',
+    padding: 10,
+  },
+
+  FragmentStyle: {
+    flex: 13,
+    backgroundColor: '#FFFFFF',
+  }
 });
