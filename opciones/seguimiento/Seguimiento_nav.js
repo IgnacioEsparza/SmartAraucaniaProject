@@ -8,8 +8,7 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   ScrollView,
-  Text,
-  Alert
+  Text
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -92,7 +91,7 @@ class Seguimiento_nav extends Component {
   static navigationOptions = {
     title: 'Estado de Incidencias',
     headerStyle: {
-      backgroundColor: '#386C3A',
+      backgroundColor: '#648a64',
     },
     headerTitleStyle: {
       color: '#FFFFFF'
@@ -184,13 +183,13 @@ const styles = StyleSheet.create({
 
 import { createStackNavigator, createAppContainer } from 'react-navigation'; // Version can be specified in package.json
 
-import Ingresar from '../Ingresar_nav';
+import Ingresar from './Ingresar_nav';
 import EstadoSeguimiento from './Seg_estado';
 
 const AppNavigator = createStackNavigator({
   Inicio: { screen: Seguimiento_nav },
   Ing: { screen: Ingresar },
-  Seg: { screen: EstadoSeguimiento },
+  Seg: { screen: EstadoSeguimiento }
 });
 
 export default createAppContainer(AppNavigator);

@@ -2,15 +2,15 @@
 import React, { Component } from 'react';
 //import react in our code.
 import { StyleSheet, View, Text } from 'react-native';
-// import all basic components
 
-export default class Cuenta_nav extends Component {
+
+export default class Configuracion_nav extends Component {
 
   render() {
     return (
       <View style={styles.MainContainer}>
         <View style={styles.BannerStyle}>
-          <Text style={{ fontSize: 22, color: '#FFFFFF' }}>Mi Cuenta</Text>
+          <Text style={{ fontSize: 22, color: '#FFFFFF' }}> Configuración</Text>
         </View>
 
         <View style={styles.FragmentStyle}>
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     flex: 1,
     //marginStart: 10,
     justifyContent: 'center',
-    backgroundColor: '#386C3A',
+    backgroundColor: '#648a64',
     alignItems: 'stretch',
     padding: 10,
   },
@@ -38,5 +38,5 @@ const styles = StyleSheet.create({
   FragmentStyle: {
     flex: 13,
     backgroundColor: '#FFFFFF',
-  },
+  }
 });

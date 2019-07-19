@@ -10,10 +10,10 @@ import {
   createAppContainer,
 } from 'react-navigation';
 
-import Ingresar_nav from './opciones/Ingresar_nav';
+import Ingresar_nav from './opciones/seguimiento/Ingresar_nav';
 import Seguimiento_nav from './opciones/seguimiento/Seguimiento_nav';
-import Cuenta_nav from './opciones/Cuenta_nav';
-import Configuracion_nav from './opciones/Configuracion_nav';
+import Cuenta_nav from './opciones/miCuenta/Cuenta_nav';
+import Configuracion_nav from './opciones/configuracion/Configuracion_nav';
  
 class NavigationDrawerStructure extends Component {
   //Structure for the navigatin Drawer
