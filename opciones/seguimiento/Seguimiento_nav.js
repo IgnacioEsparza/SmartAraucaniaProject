@@ -11,7 +11,7 @@ import {
   Text
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 class ListItem extends Component {
 
@@ -40,11 +40,7 @@ class ListItem extends Component {
         elevation: 2,
       }}>
 
-
-        {/* <Image source={{ uri: image_url }} style={{
-              height: 50,
-              width: 50,
-          }} /> */}
+        <Icon name='chair' color='#000000' size={40} style={{ top: 10 }} />
         < View style={{
           flex: 1,
           flexDirection: 'column',
@@ -52,34 +48,26 @@ class ListItem extends Component {
           justifyContent: 'center',
         }} >
 
-          <Text style={{
-            fontSize: 16,
-            color: '#000',
-          }}>
-            {this.props.item.title}
-          </Text>
+          <Text style={{ fontSize: 16, color: '#000', marginBottom: 5 }}> {this.props.item.title}</Text>
 
           <View style={{ height: 0.5, width: "100%", backgroundColor: "#000" }} />
 
-          <Text style={{
-            fontSize: 11,
-            fontStyle: 'italic',
-          }}>
-            {this.props.item.description}
-          </Text>
-          <TouchableOpacity onPress={() => { alert(`Seleccionado: ${this.props.item.title}`) }}
-            style={{
-              position: 'absolute',
-              top: 0,
-              bottom: 0,
-              left: 0,
-              right: 0
-            }}>
-          </TouchableOpacity >
+          <Text style={{ fontSize: 11, fontStyle: 'italic', marginTop: 5 }}> {this.props.item.description}</Text>
+
+          <View style={{ height: 10, width: "100%", backgroundColor: "#ffeb3b", marginTop: 10, borderColor: '#e0e0e0', borderWidth: 1, borderRadius: 2 }} />
+
         </View >
 
+        <TouchableOpacity onPress={() => { alert(`Seleccionado: ${this.props.item.title}`) }}
+          style={{
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0
+          }}>
+        </TouchableOpacity >
 
-        {/* <Image source={{ uri: estado_url }} style={styles.photo} /> */}
       </View >);
   }
 
