@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
@@ -34,6 +34,10 @@ const styles = StyleSheet.create({
     },
 });
 
+transicionSeguimientoBtn = () => {
+    alert('Madre mía')
+};
+
 const CustomRow = ({ title, description /*, image_url, estado_url */ }) => (
     <View style={styles.container}>
         {/* <Image source={{ uri: image_url }} style={styles.photo} /> */}
@@ -45,6 +49,15 @@ const CustomRow = ({ title, description /*, image_url, estado_url */ }) => (
             <Text style={styles.description}>
                 {description}
             </Text>
+            <TouchableOpacity onPress={() => { Alert.alert(`Madre mía: ${this.props.title}`); }}
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    bottom: 0,
+                    left: 0,
+                    right: 0
+                }}>
+            </TouchableOpacity >
         </View>
         {/* <Image source={{ uri: estado_url }} style={styles.photo} /> */}
     </View>

@@ -5,15 +5,87 @@ import {
   StyleSheet,
   View,
   Animated,
+  TouchableOpacity,
   TouchableWithoutFeedback,
-  TouchableHighlight,
   ScrollView,
-  Alert,
+  Text,
+  Alert
 } from 'react-native';
 
-import ListShape from '../seguimiento/Adapter_list_seguimiento';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+class ListItem extends Component {
+
+  static navigationOptions = {
+    title: 'Estado de Incidencias',
+    headerStyle: {
+      backgroundColor: '#386C3A',
+    },
+    headerTitleStyle: {
+      color: '#FFFFFF'
+    }
+  }
+
+  render() {
+    return (
+      <View style={{
+        flex: 1,
+        flexDirection: 'row',
+        padding: 10,
+        marginLeft: 16,
+        marginRight: 16,
+        marginTop: 8,
+        marginBottom: 8,
+        borderRadius: 5,
+        backgroundColor: '#FFF',
+        elevation: 2,
+      }}>
+
+
+        {/* <Image source={{ uri: image_url }} style={{
+              height: 50,
+              width: 50,
+          }} /> */}
+        < View style={{
+          flex: 1,
+          flexDirection: 'column',
+          marginLeft: 12,
+          justifyContent: 'center',
+        }} >
+
+          <Text style={{
+            fontSize: 16,
+            color: '#000',
+          }}>
+            {this.props.item.title}
+          </Text>
+
+          <View style={{ height: 0.5, width: "100%", backgroundColor: "#000" }} />
+
+          <Text style={{
+            fontSize: 11,
+            fontStyle: 'italic',
+          }}>
+            {this.props.item.description}
+          </Text>
+          <TouchableOpacity onPress={() => { alert(`Seleccionado: ${this.props.item.title}`) }}
+            style={{
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              left: 0,
+              right: 0
+            }}>
+          </TouchableOpacity >
+        </View >
+
+
+        {/* <Image source={{ uri: estado_url }} style={styles.photo} /> */}
+      </View >);
+  }
+
+
+}
 
 class Seguimiento_nav extends Component {
 
@@ -35,10 +107,6 @@ class Seguimiento_nav extends Component {
     this.props.navigation.navigate('Ing')
   };
 
-  transicionSeguimientoBtn = () => {
-    
-  };
-
   render() {
     return (
 
@@ -52,11 +120,9 @@ class Seguimiento_nav extends Component {
                 { title: 'Mobiliario Urbano Mal Estado', description: 'Plaza Anibal Pinto' },
                 { title: 'Semáforo Defectuoso', description: 'Avenida Caupolicán' },
               ]}
-              renderItem={({ item }) => (
-                <TouchableWithoutFeedback onPress={() => this.transicionSeguimientoBtn(item)}>
-                  <ListShape title={item.title} description={item.description} />
-                </TouchableWithoutFeedback>
-              )}
+              renderItem={({ item, index }) => {
+                return (<ListItem item={item} index={index} parentFlatList={this}></ListItem>);
+              }}
               keyExtractor={item => item.description}
             />
           </ScrollView>
