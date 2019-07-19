@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, Dimensions } from 'react-native';
+
+import logo from '../../assets/images/logo.png';
 
 const { width: WIDTH } = Dimensions.get('window');
 
 class Cuenta_nav extends Component {
 
   static navigationOptions = {
-    title: 'Ingresar Incidencias',
+    title: 'Mi Cuenta',
     headerStyle: {
       backgroundColor: '#648a64',
     },
@@ -27,11 +29,15 @@ class Cuenta_nav extends Component {
     return (
       <View style={styles.MainContainer}>
 
-        <View style={styles.textContainer}>
-          <Text style={styles.labelStyle}>Deseas Unirte ?</Text>
-        </View>
-
         <View style={styles.btnContainer}>
+
+          <View style={styles.textContainer}>
+            <Text style={{ fontSize: 15, color: '#000000', }}>Deseas Unirte ?</Text>
+          </View>
+
+          <View style={styles.logoContainer}>
+            <Image source={logo} style={styles.logoStyle} />
+          </View>
 
           <TouchableOpacity style={styles.loginBtnStyle} onPress={this.loginBtn}>
             <Text style={styles.textBtnStyle}>Iniciar Sesión</Text>
@@ -69,7 +75,7 @@ const styles = StyleSheet.create({
   },
 
   labelStyle: {
-    fontSize: 15,
+    fontSize: 12,
     color: '#000000',
   },
 
@@ -101,6 +107,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
 
+  },
+
+  logoStyle: {
+    width: 120,
+    height: 76,
+  },
+
+  logoContainer: {
+    alignItems: 'center',
+    marginBottom: 30,
   }
 });
 
@@ -111,8 +127,8 @@ import Registrarse from './Registrarse';
 
 const AppNavigator = createStackNavigator({
   Inicio: { screen: Cuenta_nav },
-  InSesion: {screen: IniciarSesion},
-  Reg: {screen: Registrarse}
+  InSesion: { screen: IniciarSesion },
+  Reg: { screen: Registrarse }
 });
 
 export default createAppContainer(AppNavigator);
