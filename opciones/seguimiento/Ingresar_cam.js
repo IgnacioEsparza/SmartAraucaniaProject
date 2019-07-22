@@ -10,6 +10,10 @@ export default class Ingresar_cam extends PureComponent {
         super(props)
     }
 
+    static navigationOptions = {
+        header: null
+    }
+
     render() {
         return (
 
@@ -39,7 +43,7 @@ export default class Ingresar_cam extends PureComponent {
                 />
                 <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
                     <TouchableOpacity onPress={this.takePicture.bind(this)} style={styles.capture}>
-                        <Icon name={"camera"} color='#666666' size={17} />
+                        
                     </TouchableOpacity>
                 </View>
             </View>
@@ -80,5 +84,3 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
     },
 });
-
-AppRegistry.registerComponent('IngresarCam', () => Ingresar_cam);

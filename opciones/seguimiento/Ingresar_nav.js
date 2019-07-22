@@ -10,11 +10,10 @@ export default class Ingresar_nav extends Component {
       pickerSelection: '',
       pickerDisplayed: false
     }
-    c = new Ingresar_cam();
   }
 
   static navigationOptions = {
-    title: 'Ingresar nueva Incidencia',
+    title: 'Ingresar Insidencia',
     headerStyle: {
       backgroundColor: '#386C3A',
     },
@@ -38,6 +37,10 @@ export default class Ingresar_nav extends Component {
 
   _onPressButton() {
     Alert.alert('Uwu pal que lee')
+  }
+
+  camaraBtn() {
+    this.props.navigation.navigate('Cam')
   }
 
   render() {
@@ -86,7 +89,7 @@ export default class Ingresar_nav extends Component {
             </View>
           </Modal>
           <View style={styles.container}>
-            <TouchableHighlight >
+            <TouchableHighlight onPress={() => this.camaraBtn()}>
               <View style={styles.buttonModal}>
                 <Icon name={"camera-alt"} color='#000' size={40} />
               </View>
@@ -193,16 +196,17 @@ const styles = StyleSheet.create({
   },
 });
 
-import { createSwitchNavigator, createAppContainer, createStackNavigator } from 'react-navigation';
-import Ingresar_cam from './Ingresar_cam';
+// import { createStackNavigator, createAppContainer } from 'react-navigation'; // Version can be specified in package.json
 
-const Gocamera = createStackNavigator({
-  Ing_cam: {
-    screen: Ingresar_cam
-  }
-});
+// import EstadoSeguimiento from './Seg_estado';
+// import IngresarCam from './Ingresar_cam'
 
-AppRegistry.registerComponent('c', () => Gocamera);
+// const AppNavigator = createStackNavigator({
+//   Inicio: { screen: Ingresar_nav },
+//   Cam: { screen: IngresarCam },
+// });
+
+// createAppContainer(AppNavigator);
 
 
 

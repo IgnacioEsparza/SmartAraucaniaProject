@@ -173,11 +173,13 @@ import { createStackNavigator, createAppContainer } from 'react-navigation'; // 
 
 import Ingresar from './Ingresar_nav';
 import EstadoSeguimiento from './Seg_estado';
+import IngresarCam from './Ingresar_cam'
 
 const AppNavigator = createStackNavigator({
   Inicio: { screen: Seguimiento_nav },
   Ing: { screen: Ingresar },
-  Seg: { screen: EstadoSeguimiento }
+  Seg: { screen: EstadoSeguimiento },
+  Cam: { screen: IngresarCam },
 });
 
 export default createAppContainer(AppNavigator);
