@@ -29,11 +29,11 @@ class Cuenta_nav extends Component {
     return (
       <View style={styles.MainContainer}>
 
-        <View style={styles.btnContainer}>
+        <View style={styles.textContainer}>
+          <Text style={{ fontSize: 20, color: '#000000', }}>Deseas Unirte ?</Text>
+        </View>
 
-          <View style={styles.textContainer}>
-            <Text style={{ fontSize: 15, color: '#000000', }}>Deseas Unirte ?</Text>
-          </View>
+        <View style={styles.btnContainer}>
 
           <View style={styles.logoContainer}>
             <Image source={logo} style={styles.logoStyle} />
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
     marginBottom: 20,
-    marginTop: 20
+    marginTop: 30
   },
 
   btnContainer: {
