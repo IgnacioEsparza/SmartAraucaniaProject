@@ -4,60 +4,60 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Textarea from 'react-native-textarea';
 
 export default class Ingresar_nav extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     pickerSelection: '',
-  //     pickerDisplayed: false
-  //   }
-  //   c = new Ingresar_cam();
-  // }
+  constructor(props) {
+    super(props)
+    this.state = {
+      pickerSelection: '',
+      pickerDisplayed: false
+    }
+    c = new Ingresar_cam();
+  }
 
-  // static navigationOptions = {
-  //   title: 'Ingresar nueva Incidencia',
-  //   headerStyle: {
-  //     backgroundColor: '#386C3A',
-  //   },
-  //   headerTitleStyle: {
-  //     color: '#FFFFFF'
-  //   }
-  // }
+  static navigationOptions = {
+    title: 'Ingresar nueva Incidencia',
+    headerStyle: {
+      backgroundColor: '#386C3A',
+    },
+    headerTitleStyle: {
+      color: '#FFFFFF'
+    }
+  }
 
-  // setPickerValue(newValue) {
-  //   this.setState({
-  //     pickerSelection: newValue
-  //   })
-  //   this.togglePicker();
-  // }
+  setPickerValue(newValue) {
+    this.setState({
+      pickerSelection: newValue
+    })
+    this.togglePicker();
+  }
 
-  // togglePicker() {
-  //   this.setState({
-  //     pickerDisplayed: !this.state.pickerDisplayed
-  //   })
-  // }
+  togglePicker() {
+    this.setState({
+      pickerDisplayed: !this.state.pickerDisplayed
+    })
+  }
 
-  // _onPressButton() {
-  //   Alert.alert('Uwu pal que lee')
-  // }
+  _onPressButton() {
+    Alert.alert('Uwu pal que lee')
+  }
 
   render() {
 
-    // const pickerValues = [
-    //   {
-    //     title: 'Aceras/calzadas dañadas',
-    //     value: '0',
-    //     icon: "android"
-    //   },
-    //   {
-    //     title: 'Corte de agua',
-    //     value: '1',
-    //     icon: "alarm"
-    //   },
-    // ]
+    const pickerValues = [
+      {
+        title: 'Aceras/calzadas dañadas',
+        value: '0',
+        icon: "android"
+      },
+      {
+        title: 'Corte de agua',
+        value: '1',
+        icon: "alarm"
+      },
+    ]
 
     return (
       <View style={styles.MainContainer}>
-        {/* <View style={styles.FragmentStyle}>
+        <View style={styles.FragmentStyle}>
           <TouchableHighlight onPress={() => this.togglePicker()} >
             <View style={styles.buttonModal}>
               <Text style={styles.text}>Seleccione el tipo de Incidencia
@@ -113,7 +113,7 @@ export default class Ingresar_nav extends Component {
               </View>
             </TouchableHighlight>
           </View>
-        </View> */}
+        </View>
       </View >
     );
   }
@@ -193,16 +193,16 @@ const styles = StyleSheet.create({
   },
 });
 
-// import { createSwitchNavigator, createAppContainer, createStackNavigator } from 'react-navigation';
-// import Ingresar_cam from './Ingresar_cam';
+import { createSwitchNavigator, createAppContainer, createStackNavigator } from 'react-navigation';
+import Ingresar_cam from './Ingresar_cam';
 
-// const Gocamera = createStackNavigator({
-//   Ing_cam: {
-//     screen: Ingresar_cam
-//   }
-// });
+const Gocamera = createStackNavigator({
+  Ing_cam: {
+    screen: Ingresar_cam
+  }
+});
 
-// AppRegistry.registerComponent('c', () => Gocamera);
+AppRegistry.registerComponent('c', () => Gocamera);
 
 
 
