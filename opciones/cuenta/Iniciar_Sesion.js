@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Image, Dimensions, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, Image, Dimensions, TouchableOpacity, Text, ScrollView } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 
 import logo from '../../assets/images/logo.png';
@@ -40,43 +40,46 @@ export default class Iniciar_Sesion extends Component {
         return (
             <View style={styles.MainContainer}>
 
-                <View style={styles.inputTextContainer}>
+                <ScrollView>
 
-                    <View style={styles.logoContainer}>
-                        <Image source={logo} style={styles.logoStyle} />
-                    </View>
+                    <View style={styles.inputTextContainer}>
 
-                    <View style={styles.inputContainer}>
-                        <TextInput
-                            style={styles.inputStyle}
-                            placeholder={'Número Telefónico'}
-                            placeholderTextColor={colorTextInput}
-                            underlineColorAndroid='transparent'
-                        />
-                        <Icon name='phone' color='#FFFFFF' size={20} style={styles.inputIconStyle} />
-                    </View>
+                        <View style={styles.logoContainer}>
+                            <Image source={logo} style={styles.logoStyle} />
+                        </View>
 
-                    <View style={styles.inputContainer}>
-                        <TextInput
-                            style={styles.inputStyle}
-                            placeholder={'Contraseña'}
-                            secureTextEntry={this.state.showPass}
-                            placeholderTextColor={colorTextInput}
-                            underlineColorAndroid='transparent'
-                        />
-                        <Icon name='lock-open' color='#FFFFFF' size={20} style={styles.inputIconStyle} />
+                        <View style={styles.inputContainer}>
+                            <TextInput
+                                style={styles.inputStyle}
+                                placeholder={'Número Telefónico'}
+                                placeholderTextColor={colorTextInput}
+                                underlineColorAndroid='transparent'
+                            />
+                            <Icon name='phone' color='#FFFFFF' size={20} style={styles.inputIconStyle} />
+                        </View>
 
-                        <TouchableOpacity style={styles.eyeBtnStyle} onPress={this.showPass.bind(this)}>
-                            <Icon name={this.state.press == false ? 'eye' : 'eye-with-line'} color='#FFFFFF' size={20} />
+                        <View style={styles.inputContainer}>
+                            <TextInput
+                                style={styles.inputStyle}
+                                placeholder={'Contraseña'}
+                                secureTextEntry={this.state.showPass}
+                                placeholderTextColor={colorTextInput}
+                                underlineColorAndroid='transparent'
+                            />
+                            <Icon name='lock-open' color='#FFFFFF' size={20} style={styles.inputIconStyle} />
+
+                            <TouchableOpacity style={styles.eyeBtnStyle} onPress={this.showPass.bind(this)}>
+                                <Icon name={this.state.press == false ? 'eye' : 'eye-with-line'} color='#FFFFFF' size={20} />
+                            </TouchableOpacity>
+
+                        </View>
+
+                        <TouchableOpacity style={styles.loginBtnStyle} onPress={this.loginBtn}>
+                            <Text style={styles.textBtnStyle}>Acceder</Text>
                         </TouchableOpacity>
 
                     </View>
-
-                    <TouchableOpacity style={styles.loginBtnStyle} onPress={this.loginBtn}>
-                        <Text style={styles.textBtnStyle}>Acceder</Text>
-                    </TouchableOpacity>
-
-                </View>
+                </ScrollView>
             </View>
         );
     }
@@ -141,7 +144,8 @@ const styles = StyleSheet.create({
         flex: 13,
         backgroundColor: '#FFFFFF',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: 50
     },
 
     loginBtnStyle: {

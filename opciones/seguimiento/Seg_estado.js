@@ -7,7 +7,7 @@ export default class Seguimiento_nav extends Component {
   static navigationOptions = {
     title: 'Estado de Incidencias',
     headerStyle: {
-      backgroundColor: '#386C3A',
+      backgroundColor: '#648a64',
     },
     headerTitleStyle: {
       color: '#FFFFFF'
@@ -17,7 +17,7 @@ export default class Seguimiento_nav extends Component {
   render() {
     return (
       <View style={styles.MainContainer}>
-        <Text style={{ fontSize: 15, color: '#FFFFFF' }}> Estado de Incidencias</Text>
+        <Text style={{ fontSize: 15, color: '#000000' }}> Estado de Incidencias</Text>
       </View>
     );
   }
@@ -26,6 +26,7 @@ export default class Seguimiento_nav extends Component {
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
+    backgroundColor: '#FFFFFF',
   },
 
   BannerStyle: {

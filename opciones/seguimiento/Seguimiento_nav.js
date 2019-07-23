@@ -59,7 +59,7 @@ class Seguimiento_nav extends Component {
               <View style={[styles.stateStyle, { backgroundColor: data.estado }]} />
             </View>
 
-            <TouchableOpacity onPress={() => { this.props.navigation.navigate('Ing') }}
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('Seg') }}
               style={styles.buttonListStyles}>
             </TouchableOpacity >
 
