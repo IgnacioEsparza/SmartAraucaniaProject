@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
 import {
-  FlatList,
   StyleSheet,
   View,
   Animated,
@@ -14,6 +13,8 @@ import {
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import IncidenciaData from '../data/incidencia';
+
 
 class Seguimiento_nav extends Component {
 
@@ -30,9 +31,7 @@ class Seguimiento_nav extends Component {
   constructor() {
     super()
     this.state = {
-      list: [{ title: 'Mobiliario Urbano Mal Estado', description: 'Arturo Prat 725' },
-      { title: 'Mobiliario Urbano Mal Estado', description: 'Plaza Anibal Pinto' },
-      { title: 'Semáforo Defectuoso', description: 'Avenida Caupolicán' }]
+      list: IncidenciaData
     }
   }
 
@@ -51,23 +50,17 @@ class Seguimiento_nav extends Component {
         return (
           <View key={i} style={styles.listContainer}>
 
-            <Icon name='chair' color='#000000' size={40} style={{ top: 10 }} />
+            <Icon name={data.icon} color='#000' size={40} style={{ top: 10 }} />
 
             < View style={styles.listStyle} >
-              <Text style={{ fontSize: 16, color: '#000', marginBottom: 5 }}>{data.title}</Text>
-              <View style={{ height: 0.5, width: "100%", backgroundColor: "#000" }} />
-              <Text style={{ fontSize: 11, fontStyle: 'italic', marginTop: 5 }}>{data.description}</Text>
-              <View style={styles.stateStyle} />
+              <Text style={{ fontSize: 16, color: '#000', marginBottom: 5 }}>{data.incidente}</Text>
+              <View style={{ height: 0.7, width: "100%", backgroundColor: '#648a64' }} />
+              <Text style={{ fontSize: 11, fontStyle: 'italic', marginTop: 5 }}>{data.direccion}</Text>
+              <View style={[styles.stateStyle, { backgroundColor: data.estado }]} />
             </View>
-            
+
             <TouchableOpacity onPress={() => { this.props.navigation.navigate('Ing') }}
-              style={{
-                position: 'absolute',
-                top: 0,
-                bottom: 0,
-                left: 0,
-                right: 0
-              }}>
+              style={styles.buttonListStyles}>
             </TouchableOpacity >
 
           </View>
@@ -168,11 +161,18 @@ const styles = StyleSheet.create({
   stateStyle: {
     height: 10,
     width: "100%",
-    backgroundColor: "#ffeb3b",
     marginTop: 10,
     borderColor: '#e0e0e0',
     borderWidth: 1,
     borderRadius: 2
+  },
+
+  buttonListStyles: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0
   }
 
 });

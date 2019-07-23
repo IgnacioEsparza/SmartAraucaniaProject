@@ -12,7 +12,7 @@ import {
 
 import Ingresar_nav from './opciones/seguimiento/Ingresar_nav';
 import Seguimiento_nav from './opciones/seguimiento/Seguimiento_nav';
-import Cuenta_nav from './opciones/miCuenta/Cuenta_nav';
+import Cuenta_nav from './opciones/cuenta/Cuenta_nav';
 import Configuracion_nav from './opciones/configuracion/Configuracion_nav';
  
 class NavigationDrawerStructure extends Component {

@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 import Seguimiento_nav from './opciones/seguimiento/Seguimiento_nav'
-import Cuenta_nav from './opciones/miCuenta/Cuenta_nav';
+import Cuenta_nav from './opciones/cuenta/Cuenta_nav';
 import Configuracion_nav from './opciones/configuracion/Configuracion_nav';
 
 import Icon from 'react-native-vector-icons/Entypo';
