@@ -8,17 +8,22 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 class Configuracion_nav extends Component {
 
+  static navigationOptions = {
+    title: 'Configuración',
+    headerStyle: {
+      backgroundColor: '#648a64',
+    },
+    headerTitleStyle: {
+      color: '#FFFFFF'
+    }
+  }
+
   render() {
 
     var iconSize = 30;
 
     return (
       <View style={styles.MainContainer}>
-        <View style={styles.BannerStyle}>
-          <Text style={{ fontSize: 22, color: '#FFFFFF' }}> Configuración</Text>
-        </View>
-
-        <View style={styles.FragmentStyle}>
 
           <View >
             <TouchableOpacity>
@@ -65,7 +70,6 @@ class Configuracion_nav extends Component {
           </View>
 
         </View>
-      </View>
     );
   }
 }
@@ -74,22 +78,7 @@ const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
     backgroundColor: '#FFFFFF',
-  },
-
-  BannerStyle: {
-    flex: 1,
-    //marginStart: 10,
-    justifyContent: 'center',
-    backgroundColor: '#648a64',
-    alignItems: 'stretch',
-    padding: 10,
-    marginBottom: 20
-  },
-
-  FragmentStyle: {
-    flex: 12,
-    backgroundColor: '#FFFFFF',
-    marginBottom: 20
+    marginTop: 20
   },
 
   optionsContainer: {
@@ -109,6 +98,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20
   },
+  
   textStyle: {
     fontSize: 20,
     color: '#000',

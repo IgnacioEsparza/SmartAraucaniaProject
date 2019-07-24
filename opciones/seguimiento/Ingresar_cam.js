@@ -1,8 +1,8 @@
-'use strict';
+// 'use strict';
 import React, { PureComponent } from 'react';
-import { AppRegistry, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { AppRegistry, StyleSheet, TouchableOpacity, View, Text } from 'react-native';
 import { RNCamera } from 'react-native-camera';
-import Icon from 'react-native-vector-icons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default class Ingresar_cam extends PureComponent {
 
@@ -16,7 +16,6 @@ export default class Ingresar_cam extends PureComponent {
 
     render() {
         return (
-
             <View style={styles.container}>
                 <RNCamera
                     ref={ref => {
@@ -43,7 +42,7 @@ export default class Ingresar_cam extends PureComponent {
                 />
                 <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
                     <TouchableOpacity onPress={this.takePicture.bind(this)} style={styles.capture}>
-                        
+                        <Text><Icon name={"camera"} color='#000' size={40} /></Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -73,14 +72,20 @@ const styles = StyleSheet.create({
     capture: {
         flex: 0,
         backgroundColor: '#fff',
-        borderRadius: 5,
-        padding: 15,
-        paddingHorizontal: 20,
+        borderRadius: 100,
+        // padding: 10,
+        // paddingHorizontal: 10,
         alignSelf: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
         margin: 20,
+        width: 60,
+        height: 60,
     },
     FragmentStyle: {
         flex: 15,
         backgroundColor: '#FFFFFF',
     },
 });
+
+AppRegistry.registerComponent('IngresarCam', () => Ingresar_cam);

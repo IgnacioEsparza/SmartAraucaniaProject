@@ -13,7 +13,7 @@ var incidencia = [
         direccion: 'Diego Portales 806',
         estado: aceptado,
         imagen: 'basural.jpg',
-        icon: 'trash',
+        icon: 'delete-sweep',
         fecha: '26 de Enero 2056'
     },
     {
@@ -22,7 +22,7 @@ var incidencia = [
         direccion: 'Arturo Prat 725',
         estado: proceso,
         imagen: '',
-        icon: 'chair',
+        icon: 'seat',
         fecha: '25 de Julio 2056'
     },
     {
@@ -31,7 +31,7 @@ var incidencia = [
         direccion: 'Plaza Anibal Pinto',
         estado: rechazado,
         imagen: '',
-        icon: 'chair',
+        icon: 'seat',
         fecha: '30 de Octubre 2056'
     }
 ];

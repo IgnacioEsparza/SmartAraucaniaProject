@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image, ScrollView } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconAw from 'react-native-vector-icons/FontAwesome';
 
 export default class Seguimiento_nav extends Component {

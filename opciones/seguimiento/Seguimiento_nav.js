@@ -14,6 +14,7 @@ import {
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
 import IncidenciaData from '../data/incidencia';
 
 
@@ -56,7 +57,7 @@ class Seguimiento_nav extends Component {
         return (
           <View key={i} style={styles.listContainer}>
 
-            <Icon name={data.icon} color='#000' size={40} style={{ top: 10 }} />
+            <IconMaterial name={data.icon} color='#000' size={40} style={{ top: 10 }} />
 
             < View style={styles.listStyle} >
               <Text style={{ fontSize: 16, color: '#000', marginBottom: 5 }}>{data.incidente}</Text>
