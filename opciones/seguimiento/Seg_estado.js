@@ -21,7 +21,7 @@ export default class Seguimiento_nav extends Component {
     var iconType = 'check-square';
 
     if(estado == '#ff0000'){
-      iconType = 'times-rectangle';
+      iconType = 'minus-square';
     }
 
     return(iconType);
@@ -84,6 +84,11 @@ export default class Seguimiento_nav extends Component {
     var colorEstado = this.stateColor();
     var iconSize = 25;
     var data = this.props.navigation.state.params.data;
+    var aceptacion = 'Aceptado'
+
+    if(iconAccept == 'minus-square'){
+      aceptacion = 'Rechazado';
+    }
 
     return (
       <View style={styles.MainContainer}>
@@ -129,7 +134,7 @@ export default class Seguimiento_nav extends Component {
           </View>
 
           <View style={styles.statesContainer}>
-            <Text style={styles.textStyle}>Aceptado</Text>
+            <Text style={styles.textStyle}>{aceptacion}</Text>
             <IconAw name={iconAccept} size={iconSize} color={colorEstado[1]} style={styles.iconStyle}></IconAw>
           </View>
 

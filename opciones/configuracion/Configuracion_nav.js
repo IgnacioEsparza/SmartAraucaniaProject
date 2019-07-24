@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
-export default class Configuracion_nav extends Component {
+
+class Configuracion_nav extends Component {
 
   render() {
 
@@ -51,9 +54,9 @@ export default class Configuracion_nav extends Component {
           </View>
 
           <View >
-            <TouchableOpacity>
-              <Text style={styles.textStyle}>Ayuda</Text>
-              <Icon name='ios-alert' size={iconSize} color='#000000' style={styles.iconStyle}></Icon>
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('Inf') }}>
+              <Text style={styles.textStyle}>Información</Text>
+              <Icon name='md-information-circle' size={iconSize} color='#000000' style={styles.iconStyle}></Icon>
             </TouchableOpacity>
           </View>
 
@@ -119,3 +122,12 @@ const styles = StyleSheet.create({
   },
 
 });
+
+import Informacion from './Informacion';
+
+const AppNavigator = createStackNavigator({
+  Inicio: { screen: Configuracion_nav },
+  Inf: { screen: Informacion},
+});
+
+export default createAppContainer(AppNavigator);

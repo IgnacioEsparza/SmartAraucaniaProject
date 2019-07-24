@@ -44,6 +44,11 @@ class Seguimiento_nav extends Component {
     this.props.navigation.navigate('Ing')
   };
 
+  informacionBtn = () => {
+    this.props.navigation.navigate('Inf')
+  };
+
+
   parseData() {
 
     if (this.state.list) {
@@ -92,10 +97,19 @@ class Seguimiento_nav extends Component {
         <View>
           <TouchableWithoutFeedback activeOpacity={0.7} onPress={this.ingresarIncidenciaBtn}>
             <Animated.View style={[styles.button, styles.insertar]}>
-              <Icon name='plus' size={20} color='#ffffff'></Icon>
+              <Icon name='plus' size={25} color='#ffffff'></Icon>
             </Animated.View>
           </TouchableWithoutFeedback>
         </View>
+
+        <View>
+          <TouchableWithoutFeedback activeOpacity={0.7} onPress={this.informacionBtn}>
+            <Animated.View style={[styles.buttonInfo]}>
+              <Icon name='info' size={15} color='#ffffff'></Icon>
+            </Animated.View>
+          </TouchableWithoutFeedback>
+        </View>
+        
       </View>
     );
   }
@@ -132,8 +146,24 @@ const styles = StyleSheet.create({
     right: 20,
   },
 
+  buttonInfo: {
+    width: 30,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#333',
+    shadowOpacity: .1,
+    shadowOffset: { x: 2, y: 0 },
+    shadowRadius: 2,
+    borderRadius: 30,
+    position: 'absolute',
+    bottom: 100,
+    right: 35,
+    backgroundColor: '#006064'
+  },
+
   insertar: {
-    backgroundColor: '#484848'
+    backgroundColor: '#8c8c8c'
   },
 
   textoInsertar: {
@@ -185,13 +215,15 @@ const styles = StyleSheet.create({
 
 import Ingresar from './Ingresar_nav';
 import EstadoSeguimiento from './Seg_estado';
-import IngresarCam from './Ingresar_cam'
+import IngresarCam from './Ingresar_cam';
+import Informacion from '../configuracion/Informacion';
 
 const AppNavigator = createStackNavigator({
   Inicio: { screen: Seguimiento_nav },
   Ing: { screen: Ingresar },
   Seg: { screen: EstadoSeguimiento },
   Cam: { screen: IngresarCam },
+  Inf: { screen: Informacion},
 });
 
 export default createAppContainer(AppNavigator);
