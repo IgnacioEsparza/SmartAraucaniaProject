@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 30
+        marginTop: 30,
     },
 
     loginBtnStyle: {

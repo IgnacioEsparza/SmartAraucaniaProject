@@ -13,7 +13,7 @@ export default class Ingresar_nav extends Component {
   }
 
   static navigationOptions = {
-    title: 'Ingresar Insidencia',
+    title: 'Ingresar Incidencia',
     headerStyle: {
       backgroundColor: '#386C3A',
     },

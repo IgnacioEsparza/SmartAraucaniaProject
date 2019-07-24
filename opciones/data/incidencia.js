@@ -1,9 +1,10 @@
 import Incidente from './incidentes';
 
-var rechazado = '#d50000';
-var aceptado = '#64dd17';
-var enviado = '#757575';
-var proceso = '#ffd600';
+var rechazado = '#ff0000'; //rojo
+var aceptado = '#008f39'; //verde
+var enviado = '#00b3ff'; //azul
+var proceso = '#ffb300'; //naranja
+var finalizado = '#8c8c8c'; //gris
 
 var incidencia = [
     {
@@ -11,8 +12,9 @@ var incidencia = [
         incidente: 'Micro Basural',
         direccion: 'Diego Portales 806',
         estado: aceptado,
-        imagen: '',
-        icon: 'trash'
+        imagen: 'basural.jpg',
+        icon: 'trash',
+        fecha: '26 de Enero 2056'
     },
     {
         id: 1,
@@ -20,7 +22,17 @@ var incidencia = [
         direccion: 'Arturo Prat 725',
         estado: proceso,
         imagen: '',
-        icon: 'chair'
+        icon: 'chair',
+        fecha: '25 de Julio 2056'
+    },
+    {
+        id: 2,
+        incidente: 'Mobiliario Urbano en Mal Estado',
+        direccion: 'Plaza Anibal Pinto',
+        estado: rechazado,
+        imagen: '',
+        icon: 'chair',
+        fecha: '30 de Octubre 2056'
     }
 ];
 

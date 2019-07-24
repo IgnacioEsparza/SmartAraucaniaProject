@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   ScrollView,
-  Text
+  Text,
+  ToastAndroid
 } from 'react-native';
 
 import { createStackNavigator, createAppContainer } from 'react-navigation';
@@ -59,7 +60,11 @@ class Seguimiento_nav extends Component {
               <View style={[styles.stateStyle, { backgroundColor: data.estado }]} />
             </View>
 
-            <TouchableOpacity onPress={() => { this.props.navigation.navigate('Seg') }}
+            {/* <TouchableOpacity onPress={() => { ToastAndroid.show(data.incidente, ToastAndroid.SHORT); }}
+              style={styles.buttonListStyles}>
+            </TouchableOpacity > */}
+
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('Seg', { data: data }) }}
               style={styles.buttonListStyles}>
             </TouchableOpacity >
 
@@ -162,7 +167,7 @@ const styles = StyleSheet.create({
     height: 10,
     width: "100%",
     marginTop: 10,
-    borderColor: '#e0e0e0',
+    borderColor: '#8c8c8c',
     borderWidth: 1,
     borderRadius: 2
   },
