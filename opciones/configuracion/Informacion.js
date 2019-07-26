@@ -24,10 +24,8 @@ export default class Informacion extends Component {
                 <ScrollView>
 
                     <View style={styles.textContainer} >
-                        <TouchableOpacity>
-                            <Text style={styles.textStyle}>Botón Agregar Incidencia</Text>
-                            <Icon name='ios-add-circle' size={iconSize} color='#000000' style={styles.iconStyle}></Icon>
-                        </TouchableOpacity>
+                        <Text style={styles.textStyle}>Botón Agregar Incidencia</Text>
+                        <Icon name='ios-add-circle' size={iconSize} color='#000000' style={styles.iconStyle}></Icon>
                     </View>
 
                     <View style={styles.colorLineContainer}>
@@ -42,10 +40,8 @@ export default class Informacion extends Component {
                     </View>
 
                     <View style={styles.textContainer} >
-                        <TouchableOpacity>
-                            <Text style={styles.textStyle}>Colores de Estados</Text>
-                            <Icon name='ios-color-palette' size={iconSize} color='#000000' style={styles.iconStyle}></Icon>
-                        </TouchableOpacity>
+                        <Text style={styles.textStyle}>Colores de Estados</Text>
+                        <Icon name='ios-color-palette' size={iconSize} color='#000000' style={styles.iconStyle}></Icon>
                     </View>
 
                     <View style={styles.colorLineContainer}>
@@ -69,7 +65,7 @@ export default class Informacion extends Component {
                     </View>
 
                     <View style={styles.colorLineContainer}>
-                        <Text style={styles.infoTextStyle}>Rechazada</Text>
+                        <Text style={styles.infoTextStyle}>Rechazado</Text>
                         <View style={[styles.colorLineStyle, { backgroundColor: '#ff0000' }]} />
                         <Text style={styles.infoDescripcionStyle}>Este estado se muestra cuando la petición ha sido rechazada.</Text>
                     </View>
@@ -90,7 +86,7 @@ export default class Informacion extends Component {
                     </View>
 
                     <View style={styles.colorLineContainer}>
-                        <Text style={styles.infoTextStyle}>Finalizada</Text>
+                        <Text style={styles.infoTextStyle}>Finalizado</Text>
                         <View style={[styles.colorLineStyle, { backgroundColor: '#8c8c8c' }]} />
                         <Text style={styles.infoDescripcionStyle}>Este estado se muestra una vez la
                         petición fue procesada correctamente y la incidencia detectada ha sido solucionada.</Text>

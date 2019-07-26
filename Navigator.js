@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator, createAppContainer, createMaterialTopTabNavigator } from 'react-navigation';
 
 import Seguimiento_nav from './opciones/seguimiento/Seguimiento_nav'
 import Cuenta_nav from './opciones/cuenta/Cuenta_nav';
@@ -16,7 +16,7 @@ const TabNavigator = createBottomTabNavigator({
       tabBarLabel: 'Mi Cuenta',
       tabBarIcon: ({ tintColor }) => (
         <Icon name='user' color={tintColor} size={24} />
-      )
+      ),
     }
   },
   Seguimiento: {
@@ -25,7 +25,7 @@ const TabNavigator = createBottomTabNavigator({
       tabBarLabel: 'Seguimiento',
       tabBarIcon: ({ tintColor }) => (
         <Icon name='magnifying-glass' color={tintColor} size={24} />
-      )
+      ),
     }
   },
   Configuracion: {
@@ -34,18 +34,27 @@ const TabNavigator = createBottomTabNavigator({
       tabBarLabel: 'Configuración',
       tabBarIcon: ({ tintColor }) => (
         <Icon name='cog' color={tintColor} size={24} />
-      )
+      ),
     }
   }
 }, {
-    initialRouteName:'Seguimiento',
+    initialRouteName: 'Seguimiento',
     order: ['Cuenta', 'Seguimiento', 'Configuracion'],
     navigationOptions: {
-      tanBarVisible: true
+      tabBarVisible: true
     },
-    tabBarOptions:{
-      activeTintColor:'#648a64',
-      inactiveTintColor:'#000000',
+    tabBarOptions: {
+      activeTintColor: '#648a64',
+      inactiveTintColor: 'black',
+      pressColor: '#648a64',
+      showIcon: true,
+      showLabel: true,
+      style: {
+        backgroundColor: '#white',
+      },
+      indicatorStyle: {
+        backgroundColor: '#ffffff',
+      }
     }
   });
 

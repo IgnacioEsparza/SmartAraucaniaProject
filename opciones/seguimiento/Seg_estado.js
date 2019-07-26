@@ -110,7 +110,7 @@ export default class Seguimiento_nav extends Component {
         </View>
 
         <View style={styles.titleContainer}>
-          <Text style={styles.textStyle}>Fecha:</Text>
+          <Text style={styles.textStyle}>Fecha de Registro:</Text>
           <Text style={styles.subTextStyle}>{data.fecha}</Text>
         </View>
 
